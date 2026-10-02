@@ -1,0 +1,466 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #d3d3d3;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   MAIN SCROLL
+========================================= */
+
+.scroll-section {
+  position: relative;
+  width: 100%;
+  height: 180vh;
+}
+
+
+/* =========================================
+   STICKY SCREEN
+========================================= */
+
+.sticky-screen {
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background: #d3d3d3;
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.stats {
+  position: absolute;
+
+  display: flex;
+
+  gap: 70px;
+
+  z-index: 20;
+}
+
+.stats-top {
+  top: 7%;
+  right: 11%;
+}
+
+.stats-bottom {
+  bottom: 7%;
+  right: 11%;
+}
+
+
+/* =========================================
+   STAT CARD
+========================================= */
+
+.stat-card {
+  width: 230px;
+  height: 125px;
+
+  border-radius: 11px;
+
+  padding: 28px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.stat-card h2 {
+  font-size: 56px;
+  line-height: 0.9;
+
+  font-weight: 800;
+
+  margin-bottom: 12px;
+}
+
+.stat-card p {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+
+/* =========================================
+   COLORS
+========================================= */
+
+.green-card {
+  background: #e7ff19;
+  color: #000;
+}
+
+.dark-card {
+  background: #303030;
+  color: #fff;
+}
+
+.blue-card {
+  background: #61b9e8;
+  color: #000;
+}
+
+.orange-card {
+  background: #ff7028;
+  color: #000;
+}
+
+
+/* =========================================
+   HERO BAR
+========================================= */
+
+.hero-bar {
+  position: absolute;
+
+  top: 50%;
+  left: 0;
+
+  width: 100%;
+  height: 200px;
+
+  transform: translateY(-50%);
+
+  background: #42dc7d;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  z-index: 5;
+}
+
+
+/* =========================================
+   BLACK BACKGROUND
+========================================= */
+
+.black-panel {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: #1f1f1f;
+
+  z-index: 1;
+}
+
+
+/* =========================================
+   WELCOME TEXT
+========================================= */
+
+.hero-bar h1 {
+  position: absolute;
+
+  left: 4%;
+
+  margin: 0;
+
+  white-space: nowrap;
+
+  font-size: clamp(55px, 7vw, 120px);
+
+  font-weight: 200;
+
+  line-height: 1;
+
+  letter-spacing: -1px;
+
+  color: #000;
+
+  z-index: 6;
+
+  pointer-events: none;
+
+  /*
+    Make sure the complete text
+    stays inside the hero area
+  */
+
+  max-width: 70%;
+
+  overflow: visible;
+}
+
+
+/* =========================================
+   CAR
+   GSAP MOVEMENT UNCHANGED
+========================================= */
+
+.car {
+  position: absolute;
+
+  left: 0;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: clamp(350px, 50vw, 550px);
+
+  height: 200px;
+
+  object-fit: contain;
+
+  z-index: 10;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  display: block;
+}
+
+
+/* =========================================
+   SCROLL TEXT
+========================================= */
+
+.scroll-text {
+  position: absolute;
+
+  bottom: 3%;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  font-size: 9px;
+
+  letter-spacing: 7px;
+
+  color: #777;
+
+  z-index: 30;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .stats {
+    gap: 25px;
+    right: 5%;
+  }
+
+  .stat-card {
+    width: 190px;
+    height: 110px;
+    padding: 20px;
+  }
+
+  .stat-card h2 {
+    font-size: 45px;
+  }
+
+  .stat-card p {
+    font-size: 14px;
+  }
+
+
+  /* HERO */
+
+  .hero-bar {
+    height: 180px;
+  }
+
+
+  /* WELCOME */
+
+  .hero-bar h1 {
+    left: 3%;
+
+    font-size: 65px;
+
+    max-width: 68%;
+  }
+
+
+  /* CAR */
+
+  .car {
+    width: 450px;
+    height: 180px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .scroll-section {
+    height: 170vh;
+  }
+
+
+  /* STATS */
+
+  .stats {
+    gap: 12px;
+    right: 4%;
+  }
+
+  .stats-top {
+    top: 5%;
+  }
+
+  .stats-bottom {
+    bottom: 8%;
+  }
+
+  .stat-card {
+    width: 145px;
+    height: 95px;
+    padding: 15px;
+  }
+
+  .stat-card h2 {
+    font-size: 35px;
+  }
+
+  .stat-card p {
+    font-size: 11px;
+  }
+
+
+  /* =========================================
+     MOBILE HERO
+  ========================================= */
+
+  .hero-bar {
+    height: 185px;
+  }
+
+
+  /* =========================================
+     MOBILE WELCOME
+  ========================================= */
+
+  .hero-bar h1 {
+     margin-left: 5%;
+  font-size: 55px;
+  letter-spacing: -3px;
+  }
+
+
+  /* =========================================
+     MOBILE CAR
+     SMALLER SO TEXT + LINE REMAIN VISIBLE
+  ========================================= */
+
+  .car {
+    width: 210px;
+
+    height: 185px;
+  }
+
+  .scroll-text {
+    bottom: 3%;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 450px) {
+
+  .stat-card {
+    width: 130px;
+    height: 85px;
+
+    padding: 12px;
+  }
+
+  .stat-card h2 {
+    font-size: 30px;
+  }
+
+  .stat-card p {
+    font-size: 10px;
+  }
+
+  .stats {
+    gap: 8px;
+    right: 3%;
+  }
+
+
+  /* HERO LINE BIGGER */
+
+  .hero-bar {
+    height: 175px;
+  }
+
+
+  /* COMPLETE WELCOME */
+
+  .hero-bar h1 {
+    left: 3%;
+
+    font-size: 31px;
+
+    letter-spacing: -1.5px;
+
+    max-width: 62%;
+  }
+
+
+  /* EVEN SMALLER CAR */
+
+  .car {
+    width: 185px;
+
+    height: 175px;
+  }
+
+
+  .scroll-text {
+    bottom: 3%;
+  }
+}
